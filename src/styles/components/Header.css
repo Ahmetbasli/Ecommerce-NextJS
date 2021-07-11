@@ -1,0 +1,3 @@
+.top-nav {
+  @apply flex items-center bg-amazon_blue flex-grow p-1 py-2;
+}
