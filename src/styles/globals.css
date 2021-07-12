@@ -3,3 +3,9 @@
 @tailwind utilities;
 
 @import "./components/Header.css";
+
+@layer components {
+  .link {
+    @apply cursor-pointer hover:underline;
+  }
+}
