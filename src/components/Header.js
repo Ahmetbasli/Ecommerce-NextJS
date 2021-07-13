@@ -10,8 +10,8 @@ const Header = () => {
   return (
     <header>
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2;">
+        {/* top nav */}
         <div className="mt-2 flex items-center flex-grow flex-shrink-0 sm:flex-grow-0 ">
-          {/* top nav */}
           <Image
             src={"https://links.papareact.com/f90"}
             width={150}
@@ -49,10 +49,33 @@ const Header = () => {
             </p>
           </div>
         </div>
-        <div>{/* bottom nav */}</div>
       </div>
       {/* bottom nav */}
-      <div></div>
+      <div className="flex items-center space-x-3 p-4 pl-6 amazon-blue-light ">
+        <p className="link flex items-center ">
+          <MenuIcon className="menu-icon" />
+          All
+        </p>
+        <p className="link whitespace-nowrap">Prime Video</p>
+        <p className="link whitespace-nowrap">Amazon Bussiness</p>
+        <p className="link whitespace-nowrap">Today's Deals</p>
+        <p className="link hidden whitespace-nowrap  md:inline-flex">
+          Electronics
+        </p>
+        <p className="link hidden whitespace-nowrap md:inline-flex">
+          Food & Grocery
+        </p>
+        <p className="link hidden whitespace-nowrap md:inline-flex">Prime</p>
+        <p className="link hidden whitespace-nowrap md:inline-flex">
+          Buy Again
+        </p>
+        <p className="link hidden whitespace-nowrap md:inline-flex">
+          Snopper Toolkit
+        </p>
+        <p className="link hidden whitespace-nowrap md:inline-flex">
+          Health & Personal Care
+        </p>
+      </div>
     </header>
   );
 };

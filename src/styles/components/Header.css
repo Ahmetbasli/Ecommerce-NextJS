@@ -2,3 +2,11 @@
   @apply flex items-center bg-amazon_blue flex-grow p-1 py-2;
 }
  */
+
+.menu-icon {
+  height: 22px;
+}
+.amazon-blue-light {
+  color: white;
+  background: #232f3e;
+}
