@@ -1,0 +1,11 @@
+.gradient {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, gray, transparent);
+  @apply absolute z-10;
+}
+.banner {
+  /*  max-width: 500px; */
+  margin: 0px auto;
+  @apply relative max-w-screen-xl;
+}

@@ -5,7 +5,7 @@ import {
   SearchIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/outline";
-
+import styles from "../styles/components/Header.module.css";
 const Header = () => {
   return (
     <header>
@@ -51,9 +51,9 @@ const Header = () => {
         </div>
       </div>
       {/* bottom nav */}
-      <div className="flex items-center space-x-3 p-4 pl-6 amazon-blue-light ">
+      <div className={styles.buttomNav}>
         <p className="link flex items-center ">
-          <MenuIcon className="menu-icon" />
+          <MenuIcon className={styles.menuIcon} />
           All
         </p>
         <p className="link whitespace-nowrap">Prime Video</p>
