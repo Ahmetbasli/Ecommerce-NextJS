@@ -12,7 +12,7 @@
   @apply h-4 w-4 absolute top-0 bg-yellow-400 rounded-full text-center text-xs font-bold text-black right-0 md:right-10;
 }
 .right {
-  @apply flex relative  items-center;
+  @apply relative hidden sm:flex items-center;
 }
 .rightMid {
   @apply hidden sm:flex sm:flex-col cursor-pointer hover:underline;

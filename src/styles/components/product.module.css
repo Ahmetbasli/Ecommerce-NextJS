@@ -10,5 +10,5 @@
    rounded-sm focus:outline-none focus:ring-1 focus:ring-yellow-500 active:from-yellow-500;
 }
 .main {
-  @apply relative flex flex-col m-5 bg-white z-30 p-7;
+  @apply relative flex flex-col m-5 min-w-0 bg-white z-30 p-7;
 }

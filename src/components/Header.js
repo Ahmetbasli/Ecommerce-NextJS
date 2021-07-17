@@ -39,10 +39,10 @@ const Header = () => {
             <p className="font-extrabold md:text-sm">& Orders</p>
           </div>
 
-          <div className={styles.right}>
+          <div className={`${styles.right} link`}>
             <span className={styles.number}>4</span>
             <ShoppingCartIcon className="h-10" />
-            <p className="hidden md:inline font-extrabold md:text-sm mt-2">
+            <p className="hidden md:inline  font-extrabold md:text-sm mt-2">
               Basket
             </p>
           </div>
@@ -71,9 +71,6 @@ const Header = () => {
         </p>
         <p className="link hidden whitespace-nowrap lg:inline-flex">
           Snopper Toolkit
-        </p>
-        <p className="link hidden whitespace-nowrap lg:inline-flex">
-          Health & Personal Care
         </p>
       </div>
     </header>
