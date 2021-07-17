@@ -14,11 +14,17 @@ const Product = ({ title, price, category, description, image }) => {
   const [hasPrime] = useState(Math.random() < 0.5);
 
   return (
-    <div className="relative flex items-center flex-col m-5 bg-white z-30 p-7">
+    <div className="relative flex flex-col m-5 bg-white z-30 p-7">
       <p className="absolute top-2 right-2  text-xs italic text-gray-400">
         {category}
       </p>
-      <Image src={image} alt="img" width={200} height={200} />
+      <Image
+        objectFit="contain"
+        src={image}
+        alt="img"
+        width={200}
+        height={200}
+      />
       <h4>{title}</h4>
       <div className="flex">
         {Array(rating)
@@ -31,13 +37,17 @@ const Product = ({ title, price, category, description, image }) => {
       <Currency quantity={price} currency="USD" />
 
       {!hasPrime && (
-        <img
-          src="/images/Prime-tag.png"
-          width={40}
-          height={40}
-          alt="prime-tag"
-        />
+        <div className="flex items-center space-x-3">
+          <img
+            src="/images/Prime-tag.png"
+            width={60}
+            height={60}
+            alt="prime-tag"
+          />
+          <p className={styles.deliveryTime}>Free Next-day Delivery</p>
+        </div>
       )}
+      <button className={styles.button}>Add to Basket</button>
     </div>
   );
 };

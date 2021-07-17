@@ -1,0 +1,10 @@
+.productFeed {
+  @apply grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-28;
+}
+.middleImg {
+  @apply md:col-span-full w-full;
+}
+
+.secondFeed {
+  @apply md:col-span-2;
+}
