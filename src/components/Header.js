@@ -30,19 +30,17 @@ const Header = () => {
         </div>
         {/* right */}
         <div className="flex space-x-5  mx-4 text-white whitespace-nowrap	">
-          <div className="text-white  link">
+          <div className="text-white   link">
             <p>Hello,ahmet</p>
-            <p className="font-extrabold md:text-sm">Account & List</p>
+            <p className="font-extrabold  md:text-sm">Account & List</p>
           </div>
-          <div className=" link">
+          <div className={styles.rightMid}>
             <p>Returns</p>
             <p className="font-extrabold md:text-sm">& Orders</p>
           </div>
 
-          <div className="relative flex items-center link">
-            <span className="absolute top-0 h-4 w-4 bg-yellow-400 rounded-full text-center text-xs font-bold text-black right-0 md:right-10">
-              4
-            </span>
+          <div className={styles.right}>
+            <span className={styles.number}>4</span>
             <ShoppingCartIcon className="h-10" />
             <p className="hidden md:inline font-extrabold md:text-sm mt-2">
               Basket
@@ -58,21 +56,23 @@ const Header = () => {
         </p>
         <p className="link whitespace-nowrap">Prime Video</p>
         <p className="link whitespace-nowrap">Amazon Bussiness</p>
-        <p className="link whitespace-nowrap">Today's Deals</p>
+        <p className="link whitespace-nowrap hidden md:inline-flex">
+          Today's Deals
+        </p>
         <p className="link hidden whitespace-nowrap  md:inline-flex">
           Electronics
         </p>
         <p className="link hidden whitespace-nowrap md:inline-flex">
           Food & Grocery
         </p>
-        <p className="link hidden whitespace-nowrap md:inline-flex">Prime</p>
-        <p className="link hidden whitespace-nowrap md:inline-flex">
+        <p className="link hidden whitespace-nowrap lg:inline-flex">Prime</p>
+        <p className="link hidden whitespace-nowrap lg:inline-flex">
           Buy Again
         </p>
-        <p className="link hidden whitespace-nowrap md:inline-flex">
+        <p className="link hidden whitespace-nowrap lg:inline-flex">
           Snopper Toolkit
         </p>
-        <p className="link hidden whitespace-nowrap md:inline-flex">
+        <p className="link hidden whitespace-nowrap lg:inline-flex">
           Health & Personal Care
         </p>
       </div>

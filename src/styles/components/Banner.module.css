@@ -7,5 +7,5 @@
 .banner {
   /*  max-width: 500px; */
   margin: 0px auto;
-  @apply relative max-w-screen-xl;
+  @apply relative max-w-screen-2xl;
 }
