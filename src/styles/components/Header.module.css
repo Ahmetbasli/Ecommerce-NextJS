@@ -9,11 +9,11 @@
   @apply flex items-center text-white space-x-3 p-4 pl-6 bg-amazon_blue-light;
 }
 .number {
-  @apply h-4 w-4 absolute top-0 bg-yellow-400 rounded-full text-center text-xs font-bold text-black right-0 md:right-10;
+  @apply h-4 w-4 absolute  top-0 bg-yellow-400 rounded-full text-center text-xs font-bold text-black right-0 md:right-10;
 }
 .right {
-  @apply relative hidden sm:flex items-center;
+  @apply relative text-xs sm:flex items-center;
 }
 .rightMid {
-  @apply hidden sm:flex sm:flex-col cursor-pointer hover:underline;
+  @apply sm:flex text-xs sm:flex-col cursor-pointer hover:underline;
 }

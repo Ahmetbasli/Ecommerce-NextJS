@@ -2,17 +2,35 @@ import Image from "next/image";
 import { StarIcon } from "@heroicons/react/solid";
 import { useState } from "react";
 import Currency from "react-currency-formatter";
-import styles from "../styles/components/product.module.css";
+import styles from "../styles/components/Product.module.css";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../slices/basketSlice";
 
 const Max_Rating = 5;
 const Min_Rating = 1;
 
-const Product = ({ title, price, category, description, image }) => {
+const Product = ({ id, title, price, category, description, image }) => {
   const randomRate = Math.floor(Math.random() * (Max_Rating - Min_Rating) + 1);
   const [rating] = useState(randomRate);
-
   const [hasPrime] = useState(Math.random() < 0.5);
 
+  const dispatch = useDispatch();
+
+  const addToBasket2 = () => {
+    const product = {
+      id,
+      title,
+      price,
+      category,
+      description,
+      image,
+      hasPrime,
+      rating,
+    };
+
+    // sending the product as an action to the REDUX store's basket slice
+    dispatch(addToBasket(product));
+  };
   return (
     <div className={styles.main}>
       <p className="absolute top-2 right-2  text-xs italic text-gray-400">
@@ -47,7 +65,9 @@ const Product = ({ title, price, category, description, image }) => {
           <p className={styles.deliveryTime}>Free Next-day Delivery</p>
         </div>
       )}
-      <button className={styles.button}>Add to Basket</button>
+      <button onClick={() => addToBasket2()} className={styles.button}>
+        Add to Basket
+      </button>
     </div>
   );
 };

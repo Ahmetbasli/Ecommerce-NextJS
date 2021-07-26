@@ -15,13 +15,13 @@ const Banner = () => {
       >
         {/* lazy loading doesnt work, feel free to research*/}
         <div>
-          <img loading="lazy" src="/images/1.jpg" />
+          <img loading="lazy" src="/images/first.jpg" />
         </div>
         <div>
-          <img loading="lazy" src="images/2.jpg" />
+          <img loading="lazy" src="images/second.jpg" />
         </div>
         <div>
-          <img loading="lazy" src="images/3.jpg" />
+          <img loading="lazy" src="images/third.jpg" />
         </div>
       </Carousel>
     </div>
