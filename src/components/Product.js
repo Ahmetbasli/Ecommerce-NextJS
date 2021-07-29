@@ -16,7 +16,7 @@ const Product = ({ id, title, price, category, description, image }) => {
 
   const dispatch = useDispatch();
 
-  const addToBasket2 = () => {
+  const attachToBasket = () => {
     const product = {
       id,
       title,
@@ -31,6 +31,7 @@ const Product = ({ id, title, price, category, description, image }) => {
     // sending the product as an action to the REDUX store's basket slice
     dispatch(addToBasket(product));
   };
+
   return (
     <div className={styles.main}>
       <p className="absolute top-2 right-2  text-xs italic text-gray-400">
@@ -65,7 +66,7 @@ const Product = ({ id, title, price, category, description, image }) => {
           <p className={styles.deliveryTime}>Free Next-day Delivery</p>
         </div>
       )}
-      <button onClick={() => addToBasket2()} className={styles.button}>
+      <button onClick={() => attachToBasket()} className={styles.button}>
         Add to Basket
       </button>
     </div>

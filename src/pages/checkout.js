@@ -1,13 +1,14 @@
 import Header from "../components/Header";
-import styles from "../styles/components/checkout.module.css";
+import styles from "../styles/pages/checkout.module.css";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import { selectItems } from "../slices/basketSlice";
 import CheckoutProduct from "../components/CheckoutProduct";
+import { useSession } from "next-auth/client";
 
 const Checkout = () => {
   const items = useSelector(selectItems);
-  console.log(items);
+  const [session] = useSession();
   return (
     <div className={styles.page}>
       <Header />
@@ -40,7 +41,23 @@ const Checkout = () => {
           </div>
         </div>
         {/* right */}
-        <div></div>
+        <div className={styles.right}>
+          {items.length !== 0 && (
+            <div>
+              <h2 className="whitespace-nowrap">
+                Subtotal ({items.length} items)
+                <span>
+                  {/* <Currency quantitt={price} currency="USD" /> */}
+                </span>
+              </h2>
+              <button
+                className={!session ? styles.btnDisabled : styles.checkoutBtn}
+              >
+                {!session ? "Sing in to checkout" : "Proceed to checkout"}
+              </button>
+            </div>
+          )}
+        </div>
       </main>
     </div>
   );

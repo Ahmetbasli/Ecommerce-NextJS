@@ -14,7 +14,9 @@ export const basketSlice = createSlice({
       //  this way we assign new arr
       state.items = [...state.items, action.payload];
     },
-    removeFromBasket: (state, action) => {},
+    removeFromBasket: (state, action) => {
+      state.items = state.items.filter((item) => item.id !== action.payload.id);
+    },
   },
 });
 

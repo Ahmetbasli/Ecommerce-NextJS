@@ -2,7 +2,7 @@ import Head from "next/head";
 import Banner from "../components/Banner";
 import Header from "../components/Header";
 import ProductFeed from "../components/ProductFeed";
-import styles from "../styles/components/index.module.css";
+import styles from "../styles/pages/index.module.css";
 export default function Home({ data: products }) {
   return (
     <div>
