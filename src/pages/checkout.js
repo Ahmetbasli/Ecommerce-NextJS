@@ -5,10 +5,20 @@ import { useSelector } from "react-redux";
 import { selectItems } from "../slices/basketSlice";
 import CheckoutProduct from "../components/CheckoutProduct";
 import { useSession } from "next-auth/client";
-
+import Currency from "react-currency-formatter";
+import { useState, useEffect } from "react";
 const Checkout = () => {
   const items = useSelector(selectItems);
   const [session] = useSession();
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  // Ca
+  useEffect(() => {
+    setTotalPrice(
+      items.reduce((accumulator, item) => accumulator + item.price, 0)
+    );
+  }, [items]);
+
   return (
     <div className={styles.page}>
       <Header />
@@ -41,23 +51,22 @@ const Checkout = () => {
           </div>
         </div>
         {/* right */}
-        <div className={styles.right}>
-          {items.length !== 0 && (
-            <div>
-              <h2 className="whitespace-nowrap">
-                Subtotal ({items.length} items)
-                <span>
-                  {/* <Currency quantitt={price} currency="USD" /> */}
-                </span>
-              </h2>
-              <button
-                className={!session ? styles.btnDisabled : styles.checkoutBtn}
-              >
-                {!session ? "Sing in to checkout" : "Proceed to checkout"}
-              </button>
-            </div>
-          )}
-        </div>
+
+        {items.length !== 0 && (
+          <div className={styles.right}>
+            <h2 className="whitespace-nowrap">
+              Subtotal({items.length} items):{" "}
+              <span>
+                <Currency quantity={totalPrice} currency="USD" />
+              </span>
+            </h2>
+            <button
+              className={!session ? styles.btnDisabled : styles.checkoutBtn}
+            >
+              {!session ? "Sing in to checkout" : "Proceed to checkout"}
+            </button>
+          </div>
+        )}
       </main>
     </div>
   );
