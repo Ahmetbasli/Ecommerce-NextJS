@@ -7,12 +7,32 @@ import CheckoutProduct from "../components/CheckoutProduct";
 import { useSession } from "next-auth/client";
 import Currency from "react-currency-formatter";
 import { useState, useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+
+//
+const stripePromise = loadStripe(process.env.stripe_public_key);
 const Checkout = () => {
   const items = useSelector(selectItems);
   const [session] = useSession();
   const [totalPrice, setTotalPrice] = useState(0);
 
-  // Ca
+  const createCheckoutSession = async () => {
+    const stripe = await stripePromise;
+
+    // call the backend to create a checkout session
+    const chekoutSession = await axios.post("api/create-checkout-session", {
+      items,
+      email: session.user.email,
+    });
+
+    //redirect user to Stripe Checkout
+    const result = await stripe.redirectToCheckout({
+      sessionId: chekoutSession.data.id,
+    });
+  };
+
+  // Calculate total price of products
   useEffect(() => {
     setTotalPrice(
       items.reduce((accumulator, item) => accumulator + item.price, 0)
@@ -60,7 +80,9 @@ const Checkout = () => {
                 <Currency quantity={totalPrice} currency="USD" />
               </span>
             </h2>
+
             <button
+              onClick={createCheckoutSession}
               className={!session ? styles.btnDisabled : styles.checkoutBtn}
             >
               {!session ? "Sing in to checkout" : "Proceed to checkout"}

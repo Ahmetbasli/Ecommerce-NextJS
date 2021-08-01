@@ -24,7 +24,7 @@ const Header = () => {
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0 ">
           <Image
             onClick={() => router.push("/")}
-            src={"https://links.papareact.com/f90"}
+            src={"/images/amazonLogo2.png"}
             width={150}
             height={40}
             objectFit="contain"
