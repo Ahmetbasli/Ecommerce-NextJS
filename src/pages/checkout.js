@@ -30,6 +30,8 @@ const Checkout = () => {
     const result = await stripe.redirectToCheckout({
       sessionId: chekoutSession.data.id,
     });
+
+    if (result.error) alert(result.error.message);
   };
 
   // Calculate total price of products
