@@ -22,7 +22,7 @@ export const basketSlice = createSlice({
 
 export const { addToBasket, removeFromBasket } = basketSlice.actions;
 
-// Selectors - This is how to pull information from the Global store slice
+// Selectors -  This is how to pull information from the Global store slice
 // state.basket is coming from app/store.js file reducers:{ basket :}
 export const selectItems = (state) => state.basket.items;
 
