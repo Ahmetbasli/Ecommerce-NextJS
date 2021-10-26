@@ -2,7 +2,7 @@
 
 
 
-## Using np m
+## Using npm
 
 Run commands
 
